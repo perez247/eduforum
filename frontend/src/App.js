@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Home from './pages/public/Home';
 import PrivateFull from './layouts/PrivateFull';
 import Group from './pages/private/Group';
+import Explore from './pages/private/explore/Explore';
+import AllGroup from './pages/private/all-group/AllGroup';
 
 function App() {
   const location = useLocation();
@@ -14,7 +16,11 @@ function App() {
         <Route index element={<Home />} />
 
         <Route path="private" element={<PrivateFull />}>
+          <Route path="explore" element={<Explore />} />
           <Route path="group" element={<Group />} />
+          <Route path="groups" element={<AllGroup />} />
+          
+          <Route path='*' element={<Navigate replace to="/private/explore" />} />
         </Route>
 
         <Route path='*' element={<Navigate replace to="/" />} />
