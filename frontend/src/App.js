@@ -8,6 +8,7 @@ import Group from './pages/private/Group';
 import Explore from './pages/private/explore/Explore';
 import AllGroup from './pages/private/all-group/AllGroup';
 import Auth from './pages/public/auth/Auth';
+import Profile from './pages/private/profile/Profile';
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function App() {
           <Route path="explore" element={<Explore />} />
           <Route path="group" element={<Group />} />
           <Route path="groups" element={<AllGroup />} />
+          <Route path="profile/:id" element={<Profile/>} />
           
           <Route path='*' element={<Navigate replace to="/private/explore" />} />
         </Route>
