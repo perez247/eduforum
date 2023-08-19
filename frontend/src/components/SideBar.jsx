@@ -32,7 +32,7 @@ const SideBar = () => {
         {/* <SideBarItem icon={<PowerIcon className="h-5 w-5" />} name='Log Out' /> */}
 
         <hr className="my-2 border-blue-gray-50" />
-        <span className='text-sm font-bold ms-3 inline-block text-primary w-full'>Recent active groups</span>
+        <span className='text-sm font-bold ms-3 inline-block text-primary w-full'>Your recent groups</span>
         <SideBarItem icon={<ChevronRightIcon strokeWidth={3} className="h-3 w-5 -mr-3" />} name='Career Progression' />
         <SideBarItem icon={<ChevronRightIcon strokeWidth={3} className="h-3 w-5 -mr-3" />} name='Finance' />
         <SideBarItem icon={<ChevronRightIcon strokeWidth={3} className="h-3 w-5 -mr-3" />} name='Mental' />
@@ -42,7 +42,7 @@ const SideBar = () => {
         <SearchApp className={`lg:hidden`} />
 
         <hr className="my-2 border-blue-gray-50" />
-        
+
       </List>
     </Card>
   )
