@@ -16,7 +16,7 @@ import SidebarAccodionItem from './SideBarSection/SidebarAccodionItem';
 const SideBar = () => {
 
   return (
-<Card className="w-full h-full overflow-y-auto no-scrollbar rounded-none border-r-2 border-gray-600">
+<Card className="w-full h-full overflow-y-auto no-scrollbar rounded-none border-r-2 border-tertiary">
       <List>
         <SideBarItem 
           icon={<GlobeAmericasIcon className="h-5 w-5" />}

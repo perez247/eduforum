@@ -6,7 +6,7 @@ import SideBar from '../components/SideBar'
 const PrivateFull = (props) => {
   return (
     <div className='flex relative'>
-      <NavBar className='fixed bg-white w-[100%] h-[80px] border-b-2 border-gray-600'/>
+      <NavBar className='fixed bg-white w-[100%] h-[80px] border-b-2 border-tertiary'/>
         <div className=' hidden md:block md:w-[250px] h-[100vh] bg-white pt-20'>
           <SideBar />
         </div>
