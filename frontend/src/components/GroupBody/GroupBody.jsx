@@ -11,7 +11,7 @@ const GroupBody = () => {
     return position;
   }
   return (
-    <div className="bg-[#121218] w-full pt-40 pb-14 fixed h-screen ps-14 pe-50">
+    <div className="bg-white w-full pt-40 pb-14 fixed h-screen ps-14 pe-50">
       <div className="h-5/6 overflow-auto">
         {messages.map((message) => {
           return (

@@ -12,7 +12,7 @@ const ChatBubble = (props) => {
           round={true}
         />
       </div>
-      <div className="felx-initial w-2/3 text-white">
+      <div className="felx-initial w-2/3 text-black">
         <p className="text-sm font-bold">{props.name}</p>
         <p className="text-xs w-100">
             {props.message}
