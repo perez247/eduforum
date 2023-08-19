@@ -9,6 +9,7 @@ import {
     UserCircleIcon,
     PowerIcon
   } from "@heroicons/react/24/solid";
+import { NavLink } from 'react-router-dom';
 
 const ProfileImage = () => {
   return (
@@ -17,10 +18,12 @@ const ProfileImage = () => {
         <UserCircleIcon className="h-8 w-8 cursor-pointer text-primary" />
       </MenuHandler>
       <MenuList>
-        <MenuItem className="flex items-center gap-2">
-            <UserCircleIcon className="h-4 w-4 cursor-pointer" />
-            <span className='text-sm'>My Profile</span>
-        </MenuItem>
+        <NavLink to={`/private/profile/1`}>
+            <MenuItem className="flex items-center gap-2">
+                <UserCircleIcon className="h-4 w-4 cursor-pointer" />
+                <span className='text-sm'>My Profile</span>
+            </MenuItem>
+        </NavLink>
         <hr className="my-2 border-blue-gray-50" />
         <MenuItem className="flex items-center gap-2 ">
             <PowerIcon className="h-4 w-4 cursor-pointer" />
