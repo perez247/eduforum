@@ -1,8 +1,8 @@
 import React from 'react'
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
-    <div>
+    <div className={`${props.className}`}>
       Nav Bar
     </div>
   )

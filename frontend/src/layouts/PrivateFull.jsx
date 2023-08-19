@@ -5,12 +5,14 @@ import SideBar from '../components/SideBar'
 
 const PrivateFull = (props) => {
   return (
-    <div className='flex relative gap-10'>
-        <div className=' hidden md:block md:w-[250px] h-[100vh] bg-white'>
-          <NavBar/>
+    <div className='flex relative'>
+      <NavBar className='fixed bg-green-50 w-[100%] h-[60px]'/>
+        <div className=' hidden md:block md:w-[250px] h-[100vh] bg-white pt-20'>
           <SideBar />
         </div>
-        <Outlet></Outlet>
+        <div className={`w-[100%] h-[100vh] pt-20 overflow-y-auto overflow-x-hidden p-8 no-scrollbar`}>
+          <Outlet></Outlet>
+        </div>
     </div>
   )
 }
