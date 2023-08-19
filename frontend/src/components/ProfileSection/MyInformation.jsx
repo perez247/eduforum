@@ -18,7 +18,7 @@ const MyInformation = (props) => {
 
   return (
     <Accordion open={openAcc1}>
-    <AccordionHeader className='border-b-2 border-tertiary' onClick={handleOpenAcc1}>
+    <AccordionHeader className='border-b-2 border-tertiary ' onClick={handleOpenAcc1}>
         <div className='flex justify-between w-full'>
             <span>My Information</span>
             {!openAcc1 && <ChevronUpIcon className="h-4 w-4 cursor-pointer text-tertiary" />}
