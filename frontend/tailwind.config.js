@@ -14,6 +14,9 @@ module.exports = withMT({
         },
         secondary: {
           DEFAULT: "#FBBD00"
+        },
+        tertiary: {
+          DEFAULT: '#2F190E'
         }
       },
     },
