@@ -25,7 +25,7 @@ const PrivateFull = (props) => {
         <Drawer open={drawer} onClose={closeDrawer} className="lg:hidden">
           <SideBar />
         </Drawer>
-        <div className={`w-[100%] h-[100vh] pt-24 overflow-y-auto overflow-x-hidden p-8 no-scrollbar`}>
+        <div className={`w-[100%] h-[100vh] pt-20 overflow-y-auto overflow-x-hidden no-scrollbar`}>
           <Outlet></Outlet>
         </div>
     </div>
