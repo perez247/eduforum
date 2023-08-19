@@ -10,7 +10,7 @@ const PrivateFull = (props) => {
         <div className=' hidden md:block md:w-[250px] h-[100vh] bg-white pt-20'>
           <SideBar />
         </div>
-        <div className={`w-[100%] h-[100vh] pt-24 overflow-y-auto overflow-x-hidden p-8 no-scrollbar`}>
+        <div className={`w-[100%] h-[100vh] pt-20 overflow-y-auto overflow-x-hidden no-scrollbar`}>
           <Outlet></Outlet>
         </div>
     </div>

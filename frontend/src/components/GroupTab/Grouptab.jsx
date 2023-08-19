@@ -3,35 +3,30 @@ import classes from "./Grouptab.module.css";
 
 const GroupTab = () => {
   return (
-    <div className="border-b border-gray-400 flex justify-start items-center px-4 mb-6 overflow-auto">
-      <div className="py-2 flex items-center mr-8 gap-x-1 cursor-pointer border-b-2 border-blue-1">
-        <p className="text-sm font-medium whitespace-nowrap text-blue-1">
+    <div className=" flex justify-start items-center px-4 overflow-auto">
+      <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer border-b-2 border-red-500 hover:border-red-500">
+        <p className="text-xs font-medium whitespace-nowrap text-white">
           Schoolyard Gossip
         </p>
       </div>
-      <div className="py-2 flex items-center mr-8 gap-x-1 cursor-pointer border-b-2 border-blue-1">
-        <p className="text-sm font-medium whitespace-nowrap text-blue-1">
+      <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-red-500">
+        <p className="text-xs font-medium whitespace-nowrap text-white">
           Colleagues
         </p>
       </div>
-      <div className="py-2 flex items-center mr-8 gap-x-1 cursor-pointer border-b-2 border-blue-1">
-        <p className="text-sm font-medium whitespace-nowrap text-blue-1">
-          Schoolyard Gossip
-        </p>
-      </div>
-      <div className="py-2 flex items-center mr-8 gap-x-1 cursor-pointer border-b-2 border-blue-1">
-        <p className="text-sm font-medium whitespace-nowrap text-blue-1">
+      <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-red-500">
+        <p className="text-xs font-medium whitespace-nowrap text-white">
           Bulletin Board
         </p>
       </div>
-      <div className="py-2 flex items-center mr-8 gap-x-1 cursor-pointer border-b-2 border-blue-1">
-        <p className="text-sm font-medium whitespace-nowrap text-blue-1">
+      <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-red-500">
+        <p className="text-xs font-medium whitespace-nowrap text-white">
           The Commons
         </p>
       </div>
-      <div className="py-2 flex items-center mr-8 gap-x-1 cursor-pointer border-b-2 border-blue-1">
-        <p className="text-sm font-medium whitespace-nowrap text-blue-1">
-          Save
+      <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-red-500">
+        <p className="text-xs font-medium whitespace-nowrap text-white">
+          Save the date
         </p>
       </div>
     </div>
