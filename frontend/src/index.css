@@ -23,3 +23,7 @@ textarea:focus, input:focus{
 *:focus {
     outline: none;
 }
+
+input:-internal-autofill-selected {
+    background-color: unset !important;
+}

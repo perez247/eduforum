@@ -7,13 +7,15 @@ import PrivateFull from './layouts/PrivateFull';
 import Group from './pages/private/Group';
 import Explore from './pages/private/explore/Explore';
 import AllGroup from './pages/private/all-group/AllGroup';
+import Auth from './pages/public/auth/Auth';
 
 function App() {
   const location = useLocation();
   return (
     <section className='font-body w-[100%] h-[100%]'>
       <Routes location={location} key={location.pathname} >
-        <Route index element={<Home />} />
+        {/* <Route index element={<Home />} /> */}
+        <Route index element={<Navigate replace to="/public/auth" />} />
 
         <Route path="private" element={<PrivateFull />}>
           <Route path="explore" element={<Explore />} />
@@ -22,8 +24,11 @@ function App() {
           
           <Route path='*' element={<Navigate replace to="/private/explore" />} />
         </Route>
+        <Route path="public">
+          <Route path="auth" element={<Auth />} />
+        </Route>
 
-        <Route path='*' element={<Navigate replace to="/" />} />
+        <Route path='*' element={<Navigate replace to="/public/auth" />} />
       </Routes>
     </section>
   );
