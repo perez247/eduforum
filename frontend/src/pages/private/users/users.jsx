@@ -56,7 +56,7 @@ const Users = () => {
           )}
         </div>
       </div>
-      <UserList list={ListItems} checkBoxChecked={selectUser} />
+      <UserList list={ListItems} checkBoxChecked={selectUser} hasCheckBox={true} />
       <div className="absolute bottom-0 w-full  overflow-auto items-center">
         <Pagination
           Datalength={ListItems.length}

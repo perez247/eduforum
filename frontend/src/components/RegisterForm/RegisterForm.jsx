@@ -20,7 +20,7 @@ const RegisterForm = (props) => {
         <UserIcon className="felx-none h-6 w-6 text-black ms-1 me-2" />
         <input
           placeholder="Input your username"
-          className="felx-initial mx-1 w-full bg-[#FFFAFA] text-black"
+          className="felx-initial mx-1 w-full bg-[#FFFAFA] text-black border-0"
         />
       </div>
       <div className="border-solid border-2 bg-[#FFFAFA] border-[##FFFAFA] flex w-full px-2 py-2 my-4 rounded-md items-center">
@@ -28,7 +28,7 @@ const RegisterForm = (props) => {
         <input
           type="password"
           placeholder="Input your password"
-          className="felx-initial mx-1 w-full bg-[#FFFAFA] text-black"
+          className="felx-initial mx-1 w-full bg-[#FFFAFA] text-black border-0"
         />
         <EyeIcon className="felx-initial h-6 w-6 text-black ms-2 mx-1" />
       </div>
@@ -37,7 +37,7 @@ const RegisterForm = (props) => {
         <input
           type="password"
           placeholder="Retype password"
-          className="felx-initial mx-1 w-full bg-[#FFFAFA] text-black"
+          className="felx-initial mx-1 w-full bg-[#FFFAFA] text-black border-0"
         />
         <EyeIcon className="felx-initial h-6 w-6 text-black ms-2 mx-1" />
       </div>
