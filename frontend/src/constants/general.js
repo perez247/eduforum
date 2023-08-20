@@ -10,6 +10,7 @@ export const ENV = {
     // isProduction: true,
 
     // Local
-    baseUrl: '/assets/mock',
+    baseUrl: '/',
+    mockUrl: '/assets/mock',
     isProduction: false,
 }
