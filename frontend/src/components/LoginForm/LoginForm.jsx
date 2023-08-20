@@ -2,6 +2,9 @@ import React from "react";
 import { UserIcon, LockClosedIcon, EyeIcon } from "@heroicons/react/24/outline";
 import InputControl from "../Forms/InputControl";
 import { Spinner } from "@material-tailwind/react";
+import { userLogin } from "../../constants/login";
+
+import { toast } from "react-toastify";
 
 /**
  * @param {object} props
@@ -33,11 +36,35 @@ const LoginForm = (props) => {
   }, [formControl]);
 
   const login = () => {
+
+    const data = {};
+
+    for (const key in formControl) {
+      data[key] = formControl[key].value;
+    }
+
       setIsLoading(true);
-      setTimeout(() => {
+      const id = setTimeout(() => {
+
+          const user = userLogin.find(a => a.email === data.username.toLowerCase());
+
+          if (!user) {
+            toast.error('Invalid credentials');
+            setIsLoading(false);
+            clearInterval(id)
+            return;
+          }
+
+          // This is not the right approach we wanted to use but due to time we choose this
+          // Section that will use this includes 
+          // Side bar 
+          // Profile
+          localStorage.setItem('user', JSON.stringify(user));
+
+
           setIsLoading(false);
           props.routeAfterLogin('/private/explore');
-      }, 3000);
+      }, 2000);
   }
 
   function showRegistration() {

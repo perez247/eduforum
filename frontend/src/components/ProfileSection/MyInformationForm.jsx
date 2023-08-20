@@ -2,15 +2,43 @@ import React, { useCallback, useRef } from 'react'
 import {
     Avatar,
     Button,
-    Spinner
+    Spinner,
+    Menu,
+    MenuHandler,
+    MenuList,
+    MenuItem,
   } from "@material-tailwind/react";
 
+import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
 import InputControl from '../Forms/InputControl';
+import ConfirmAction from '../Modals/ConfirmAction';
+import { useNavigate } from 'react-router-dom';
+import { authUtility } from '../../Helpers/AuthUtility';
 
 const MyInformationForm = () => {
 
+    const navigate = useNavigate()
+
+    const user = authUtility.getCurrentUser();
+  
+    if (!user) {
+      authUtility.logOut();
+      navigate('private');
+    }
+
     const [isLoading, setIsLoading] = React.useState(false);
     const [isDisabled, setIsDisabled] = React.useState(true);
+    
+    const [openModal, setOpenModal] = React.useState(false);
+
+    const toggleModal = (state) => {
+        setOpenModal(state)
+      }
+
+      const confirmed = (state) => {
+        console.log(state);
+        setOpenModal(false)
+      }
     
     const formControl = {};
     const form = useRef();
@@ -31,7 +59,6 @@ const MyInformationForm = () => {
     }, [formControl]);
 
     const updateInfo = () => {
-        console.log(formControl);
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false)
@@ -41,16 +68,34 @@ const MyInformationForm = () => {
   return (
     <div className='flex flex-col md:flex-row w-full p-4 gap-10 items-start'>
 
-        <div className='flex flex-col w-full md:w-[250px] justify-center items-center'>
+        <div className='flex flex-col w-full md:w-[250px] justify-center items-center relative'>
+
+        {
+            user.type === 'institution' && <Menu>
+                <MenuHandler>
+                    <EllipsisVerticalIcon className='cursor-pointer w-5 h-5 text-white bg-tertiary absolute right-0 top-0' />
+                </MenuHandler>
+                <MenuList>
+                    <MenuItem onClick={toggleModal.bind(null, true)} >Revoke affiliation</MenuItem>
+                </MenuList>
+            </Menu>
+        }
+
             <div>
                 <Avatar 
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
                 alt="avatar" 
                 size="xxl" />
             </div>
+
             <div>
-                23 followers
-                22 following
+
+                <div className='flex gap-2 mt-3'>
+                    <div className='flex flex-col text-xs items-center'><span className='font-bold'>23</span> <span>followers</span></div>
+                    <div className='flex flex-col text-xs items-center'><span className='font-bold'>23</span> <span>following</span></div>
+                </div>
+
+                <Button size='sm' className='w-full mt-2'>Follow</Button>
             </div>
         </div>
         <div className='w-full'>
@@ -98,7 +143,14 @@ const MyInformationForm = () => {
                 {isLoading && <Spinner className='w-4 h-4' />}
             </Button>
         </div>
-
+        <ConfirmAction 
+                    open={openModal} 
+                    toggleModal={toggleModal} 
+                    confirmed={toggleModal}
+                    header='Revoke Affiliation'
+                    message='Are you sure you want to revoke this student, all groups created by this student will also be affected'
+                    confirm='Yes revoke'
+                />
     </div>
   )
 }

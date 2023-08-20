@@ -30,7 +30,7 @@ const GroupHeading = (props) => {
           <div className="flex-initial w-2/3 text-tertiary">
             <p className="text-xl font-bold">{props.heading}</p>
             <p className="text-xs">{props.subHeading}</p>
-            <div className="flex gap-2 mt-2 items-center">
+            {props.showTab && <div className="flex gap-2 mt-2 items-center">
               <span className="text-xs font-bold">Affiliations: </span>
               {affiliation === 0 && (
                 <span className="text-xs bg-black rounded-md p-[3px] text-white">
@@ -42,7 +42,7 @@ const GroupHeading = (props) => {
                   Alabama
                 </span>
               )}
-            </div>
+            </div>}
           </div>
           <div className="flex-initial w-14">
             {/* <PlusIcon className="h-7 w-7 bg-red-500 text-white font-extrabold"/> */}

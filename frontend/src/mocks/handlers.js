@@ -2,12 +2,13 @@
 // src/mocks/handlers.js
 import { rest } from 'msw'
 import { userMockApi } from './userMockApi'
+import { groupMockApi } from './groupMockApi'
 
 export const handlers = [
 
   // Handles a GET request to get affiliations
   userMockApi.getAffiliations(),
 
-  // Handles a GET /user request
-  rest.get('/user', null),
+  // Get groups
+  groupMockApi.getGroups(),
 ]

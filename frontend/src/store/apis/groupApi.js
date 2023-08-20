@@ -4,7 +4,7 @@ import { ENV } from '../../constants/general';
 export const groupApi = createApi({
     reducerPath: 'groupApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: ENV.mockUrl,
+        baseUrl: ENV.baseUrl,
         prepareHeaders: (headers) => {
             return headers;
         }
@@ -14,8 +14,8 @@ export const groupApi = createApi({
 
         // Query to get the user group
         getGroups: builder.query({
-            query:({ userId }) => {
-                return `/groupsList.json`;
+            query:() => {
+                return `groups`;
             }
         }),
         
@@ -48,26 +48,25 @@ export const groupApi = createApi({
             }
         }),
 
-        // *********************************************************************
-        // This is a code sample for making other request other than get
-        // *********************************************************************
-        // toggleFavoriteMovie: builder.mutation({
-        //     query: (body) => {
-        //         return {
-        //             url: `/account/${body.id}/favorite`,
-        //             method: 'POST',
-        //             body: body.body
-        //         }
-        //     }
-        // })
+        // // *********************************************************************
+        // // This is a code sample for making other request other than get
+        // // *********************************************************************
+        // // toggleFavoriteMovie: builder.mutation({
+        // //     query: (body) => {
+        // //         return {
+        // //             url: `/account/${body.id}/favorite`,
+        // //             method: 'POST',
+        // //             body: body.body
+        // //         }
+        // //     }
+        // // })
     }),
 });
 
 
 export const {
-    getGroups,
-    getGroupStudents,
-    getGroupMessage,
-    postGroupMessage,
-    getGroupMedia,
+    useGetGroupsQuery,
+    useGetGroupMediaQuery,
+    useGetGroupStudentsQuery,
+    useGetGroupMessageQuery,
 } = groupApi;

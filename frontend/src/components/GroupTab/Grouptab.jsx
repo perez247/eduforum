@@ -22,12 +22,12 @@ const GroupTab = (props) => {
           Chat
         </p>
       </div>
-      <div className={(props.activeTab === "Media" ? "border-primary border-b-2 " : " " ) + ("py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary")} onClick={() => changedTab('Media')}>
+      <div className={(props.activeTab === "Overview" ? "border-primary border-b-2 " : " " ) + ("py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary")} onClick={() => changedTab('Overview')}>
         <p className="text-xs font-medium whitespace-nowrap text-black">
           Overview
         </p>
       </div>
-      <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary">
+      <div className={(props.activeTab === "Media" ? "border-primary border-b-2 " : " " ) + ("py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary")} onClick={() => changedTab('Media')}>
         <p className="text-xs font-medium whitespace-nowrap text-black">
           Media
         </p>
@@ -47,7 +47,7 @@ const GroupTab = (props) => {
           Challenges
         </p>
       </div>
-      <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary">
+      <div className={ (props.activeTab === "Settings" ? "border-primary border-b-2 " : " " ) + ("py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary")} onClick={() => changedTab('Settings')}>
         <p className="text-xs font-medium whitespace-nowrap text-black">
           Settings
         </p>

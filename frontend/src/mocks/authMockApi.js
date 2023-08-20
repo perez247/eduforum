@@ -4,7 +4,7 @@ import { userLogin } from '../constants/login';
 export const userMockApi = {
 
     // Get my affliated educations
-    getAffiliations: () => {
+    login: () => {
         return rest.get('/login', (req, res, ctx) => {
             // get the information from req
 

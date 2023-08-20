@@ -11,9 +11,15 @@ import {
   } from "@heroicons/react/24/solid";
   import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { authUtility } from '../../Helpers/AuthUtility';
 
 const ProfileImage = () => {
   const navigate = useNavigate();
+
+  const signOut = () => {
+    authUtility.logOut();
+    navigate('/public/auth')
+  }
 
   return (
 <Menu>
@@ -28,7 +34,7 @@ const ProfileImage = () => {
             </MenuItem>
         </NavLink>
         <hr className="my-2 border-blue-gray-50" />
-        <MenuItem className="flex items-center gap-2 " onClick={() => navigate('/public/auth')}>
+        <MenuItem className="flex items-center gap-2 " onClick={signOut}>
             <PowerIcon className="h-4 w-4 cursor-pointer" />
           <span className='text-sm'>Sign Out</span>
         </MenuItem>

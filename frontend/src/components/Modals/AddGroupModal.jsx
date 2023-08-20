@@ -105,7 +105,7 @@ const AddGroupModal = (props) => {
 
                     <div className='flex w-full md:gap-5 flex-col md:flex-row'>
                         <SelectControl
-                            display='Group affiliations'
+                            display='Group affiliations. (Public if nothing selected)'
                             id='affiliations'
                             validation={[]}
                             sendStatus={getControlStatus}

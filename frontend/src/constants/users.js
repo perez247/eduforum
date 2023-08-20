@@ -9,7 +9,8 @@ export const Users = [
       "username": "Janell_Collier",
       "isActive": true,
       "createdOn": "2020-10-06T09:49:53",
-      "lastLogInOn": "2014-06-13T02:15:01"
+      "lastLogInOn": "2014-06-13T02:15:01",
+      "status": ['Alumni']
     },
     {
       "id": "64e1c71a6a3d0e4f00d3530c",
@@ -21,7 +22,8 @@ export const Users = [
       "username": "Jeannine_Morrison",
       "isActive": false,
       "createdOn": "2019-04-11T03:35:49",
-      "lastLogInOn": "2016-05-22T01:37:21"
+      "lastLogInOn": "2016-05-22T01:37:21",
+      "status": ['Founder', 'Alumni']
     },
     {
       "id": "64e1c71a8565fc180165e8b3",
@@ -33,7 +35,8 @@ export const Users = [
       "username": "Lily_Foreman",
       "isActive": true,
       "createdOn": "2014-04-12T10:57:58",
-      "lastLogInOn": "2017-10-18T03:28:33"
+      "lastLogInOn": "2017-10-18T03:28:33",
+      "status": ['Admin']
     },
     {
       "id": "64e1c71a738602769876affe",
@@ -45,7 +48,8 @@ export const Users = [
       "username": "Oliver_Valentine",
       "isActive": true,
       "createdOn": "2022-05-11T07:45:51",
-      "lastLogInOn": "2020-03-03T12:07:45"
+      "lastLogInOn": "2020-03-03T12:07:45",
+      "status": ['Secretary']
     },
     {
       "id": "64e1c71aaec41601081acb29",
@@ -57,7 +61,8 @@ export const Users = [
       "username": "Sasha_Gregory",
       "isActive": true,
       "createdOn": "2019-08-12T11:25:11",
-      "lastLogInOn": "2017-09-12T05:35:06"
+      "lastLogInOn": "2017-09-12T05:35:06",
+      "status": ['Vice President']
     },
     {
       "id": "64e1c71a901461a58e84866c",
