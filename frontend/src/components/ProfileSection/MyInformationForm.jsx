@@ -41,17 +41,17 @@ const MyInformationForm = () => {
   return (
     <div className='flex flex-col md:flex-row w-full p-4 gap-10 items-start'>
 
-        <div className='flex w-full md:w-[250px] justify-center items-center'>
+        <div className='flex flex-col w-full md:w-[250px] justify-center items-center'>
             <div>
                 <Avatar 
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
                 alt="avatar" 
                 size="xxl" />
             </div>
-            {/* <div>
+            <div>
                 23 followers
                 22 following
-            </div> */}
+            </div>
         </div>
         <div className='w-full'>
             <form ref={form}>
