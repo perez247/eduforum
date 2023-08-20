@@ -13,16 +13,38 @@ export const groupApi = createApi({
     endpoints: (builder) => ({
 
         // Query to get the user group
-        getUserGroups: builder.query({
+        getGroups: builder.query({
             query:({ userId }) => {
-                return `groups?userId=${userId}`;
+                return `/groupsList.json`;
+            }
+        }),
+        
+        // Query to get the user group
+        getGroupStudents: builder.query({
+            query:({ groupId }) => {
+                return `/groupsStudents.json`;
             }
         }),
 
         // Query to get the list of chat of group
-        getGroupChat: builder.query({
+        getGroupMessage: builder.query({
             query:({ groupId, page, pageSize }) => {
-                return `chats?groupId=${groupId}&page=${page}&pageSize=${pageSize}`;
+                return `/groupMessage.json`;
+            }
+        }),
+
+        postGroupMessage: builder.mutation({
+            query: (body) => {
+                return {
+                    url: `/groupMessage.json`,
+                }
+            }
+        }),
+        
+        // Query to get the list of chat of group
+        getGroupMedia: builder.query({
+            query:({ groupId, page, pageSize }) => {
+                return `/groupMedia.json`;
             }
         }),
 
@@ -43,6 +65,9 @@ export const groupApi = createApi({
 
 
 export const {
-    useGetUserGroupsQuery,
-    useGetGroupChatQuery,
+    getGroups,
+    getGroupStudents,
+    getGroupMessage,
+    postGroupMessage,
+    getGroupMedia,
 } = groupApi;
