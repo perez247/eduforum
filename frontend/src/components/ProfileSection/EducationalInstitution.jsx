@@ -8,13 +8,29 @@ import {
   import {
     ChevronDownIcon,
     ChevronUpIcon,
+    PlusIcon
   } from "@heroicons/react/24/solid";
+import EducationalItem from './EducationalItem';
+import AddEducationalItem from '../Modals/AddEducationalItem';
 
 const EducationalInstitution = (props) => {
     const [openAcc1, setOpenAcc1] = React.useState(props.state);
+    const [openModal, setOpenModal] = React.useState(false);
+
+    const [items, setItems] = React.useState([]);
    
     const handleOpenAcc1 = () => setOpenAcc1((cur) => !cur);
 
+    const toggleAddEdu = (state) => {
+      setOpenModal(state)
+    }
+
+    const addEdu = (data) => {
+      setItems(d => {
+        d.push(data);
+        return d;
+      })
+    }
 
   return (
     <Accordion open={openAcc1}>
@@ -26,9 +42,13 @@ const EducationalInstitution = (props) => {
         </div>
     </AccordionHeader>
     <AccordionBody>
-      We&apos;re not always in the position that we want to be at. We&apos;re constantly
-      growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
-      ourselves and actualize our dreams.
+        <PlusIcon onClick={toggleAddEdu.bind(null, true)} className="h-7 w-7 bg-primary text-white font-extrabold float-right cursor-pointer"/>
+        <AddEducationalItem open={openModal} toggleModal={toggleAddEdu} add={addEdu} />
+      
+        {
+          items.map((x, index) => <EducationalItem key={index} item={x} /> )
+        }
+
     </AccordionBody>
   </Accordion>
   )

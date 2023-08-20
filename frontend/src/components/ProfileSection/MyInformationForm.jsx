@@ -1,16 +1,10 @@
 import React, { useCallback, useRef } from 'react'
 import {
-    Accordion,
-    AccordionHeader,
-    AccordionBody,
     Avatar,
-    Button
+    Button,
+    Spinner
   } from "@material-tailwind/react";
 
-  import {
-    ChevronDownIcon,
-    ChevronUpIcon,
-  } from "@heroicons/react/24/solid";
 import InputControl from '../Forms/InputControl';
 
 const MyInformationForm = () => {
@@ -36,50 +30,73 @@ const MyInformationForm = () => {
         }
     }, [formControl]);
 
-  return (
-    <div className='flex flex-col md:flex-row w-full p-4 gap-10 items-center'>
+    const updateInfo = () => {
+        console.log(formControl);
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 3000);
+    }
 
-        <div className='flex w-full md:w-[250px] flex-col justify-center items-center'>
+  return (
+    <div className='flex flex-col md:flex-row w-full p-4 gap-10 items-start'>
+
+        <div className='flex w-full md:w-[250px] justify-center items-center'>
             <div>
                 <Avatar 
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
                 alt="avatar" 
                 size="xxl" />
             </div>
-            <div>
+            {/* <div>
                 23 followers
                 22 following
-            </div>
+            </div> */}
         </div>
         <div className='w-full'>
             <form ref={form}>
                 <InputControl
                     display='Username'
                     id='username'
-                    validation={(name) => name && name.trim().length > 0}
+                    validation={[
+                        {
+                            validate: (name) => name && name.trim().length > 0,
+                            errorMessage: 'Username is required'
+                        }
+                    ]}
                     sendStatus={getControlStatus}
-                    errorMessage='Username is required'
                     disabled={true}
                 />
 
-                <div className='flex w-full gap-10 flex-col md:flex-row'>
+                <div className='flex w-full md:gap-10 flex-col md:flex-row'>
                     <InputControl
                         display='First Name'
                         id='first name'
-                        validation={(name) => name && name.trim().length > 0}
+                        validation={[
+                            {
+                                validate: (name) => name && name.trim().length > 0,
+                                errorMessage: 'First Name is required'
+                            }
+                        ]}
                         sendStatus={getControlStatus}
-                        errorMessage='First Name is required'
                     />
                     <InputControl
                         display='Last Name'
                         id='lastName'
-                        validation={(name) => name && name.trim().length > 0}
+                        validation={[
+                            {
+                                validate: (name) => name && name.trim().length > 0,
+                                errorMessage: 'Last Name is required'
+                            }
+                        ]}
                         sendStatus={getControlStatus}
-                        errorMessage='Last Name is required'
                     />
                 </div>
             </form>
-            <Button className='bg-primary float-right'>Save</Button>
+            <Button onClick={updateInfo} disabled={isLoading || isDisabled} className='bg-primary float-right flex gap-3'>
+                Save
+                {isLoading && <Spinner className='w-4 h-4' />}
+            </Button>
         </div>
 
     </div>

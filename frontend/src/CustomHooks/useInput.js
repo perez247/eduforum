@@ -5,9 +5,22 @@ const useInput = (validation, sendStatus, id) => {
     const [value, setValue] = useState();
     const [isToched, setIsTouched] = useState(false);
 
-    const valueIsValid = validation(value);
-    let hasError = !valueIsValid && isToched;
-    // console.log(valueIsValid, isToched, value, hasError);
+    let error = null;
+
+    const validate = () => {
+        validation.every(x => {
+            const valueIsValid = x.validate(value);
+            if (!valueIsValid && isToched) {
+                error = x.errorMessage;
+                return false;
+            }
+            return true;
+        });
+    }
+
+    // const valueIsValid = validation(value);
+    // hasError = !valueIsValid && isToched;
+    validate();
 
     const valueChangeHandler = (value) => {
         setValue(value);
@@ -18,12 +31,12 @@ const useInput = (validation, sendStatus, id) => {
     }
 
     useEffect(() => {
-        sendStatus({ hasError, value, id, valueChangeHandler, valueTouchedHandler });
-    }, [value, hasError, sendStatus, id])
+        sendStatus({ error, value, id, valueChangeHandler, valueTouchedHandler });
+    }, [value, error, sendStatus, id])
 
 
     return {
-        value, hasError, valueChangeHandler, valueTouchedHandler
+        value, error, valueChangeHandler, valueTouchedHandler
     }
 }
 

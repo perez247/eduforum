@@ -33,5 +33,7 @@ module.exports = withMT({
       black: '900',
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 });

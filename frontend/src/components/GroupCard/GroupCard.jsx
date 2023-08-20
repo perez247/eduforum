@@ -7,6 +7,7 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
+import { NavLink } from 'react-router-dom';
 
 const GroupCard = () => {
   return (
@@ -25,7 +26,9 @@ const GroupCard = () => {
         </span>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button className='bg-primary'>Read More</Button>
+        <NavLink to={`/private/group/1`}>
+          <Button className='bg-primary'>View</Button>
+        </NavLink>
       </CardFooter>
     </Card>
   )

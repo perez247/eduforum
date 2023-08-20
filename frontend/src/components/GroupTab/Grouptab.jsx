@@ -6,27 +6,27 @@ const GroupTab = () => {
     <div className=" flex justify-start items-center px-4 overflow-auto">
       <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer border-b-2 border-primary hover:border-primary">
         <p className="text-xs font-medium whitespace-nowrap text-black">
-          Schoolyard Gossip
+          Chat
         </p>
       </div>
       <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary">
         <p className="text-xs font-medium whitespace-nowrap text-black">
-          Colleagues
+          Media
         </p>
       </div>
       <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary">
         <p className="text-xs font-medium whitespace-nowrap text-black">
-          Bulletin Board
+          Events
         </p>
       </div>
       <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary">
         <p className="text-xs font-medium whitespace-nowrap text-black">
-          The Commons
+          Users
         </p>
       </div>
       <div className="py-2 px-5 flex items-center mr-8 gap-x-1 cursor-pointer hover:border-b-2 hover:border-primary">
         <p className="text-xs font-medium whitespace-nowrap text-black">
-          Save the date
+          Challenges
         </p>
       </div>
     </div>
