@@ -5,9 +5,7 @@ import {
     DialogHeader,
     DialogBody,
     DialogFooter,
-    Avatar,
     Spinner,
-    Option
   } from "@material-tailwind/react";
 
   import {
@@ -57,27 +55,28 @@ const AddEducationalItem = (props) => {
 
   return (
     <>
-        <Dialog open={props.open} handler={props.toggleModal.bind(null, false)}>
+        <Dialog size='lg' open={props.open} handler={props.toggleModal.bind(null, false)}>
             <DialogHeader className='border-b-2 border-tertiary'>Affiliate with an institution</DialogHeader>
             <DialogBody>
 
               <form ref={form}>
 
-                <div className='flex w-full md:gap-10 flex-col md:flex-row'>
-                  <SelectControl
-                    display='Educational Institution'
-                    id='educationInstitution'
-                    validation={[
-                      {
-                        validate: (name) => name && name.trim().length > 0,
-                        errorMessage: 'An Institution is required'
-                      }
-                    ]}
-                    sendStatus={getControlStatus}
-                  >
-                    <Option value='Alabama' >Alabama</Option>
-                    <Option value='Queens Land' >Queens Land</Option>
-                  </SelectControl>
+                  <div className='mb-8'>
+                    <SelectControl
+                      display='Educational Institution'
+                      id='educationInstitution'
+                      validation={[
+                        {
+                          validate: (name) => name && name.trim().length > 0,
+                          errorMessage: 'An Institution is required'
+                        }
+                      ]}
+                      sendStatus={getControlStatus}
+                    >
+                      <option value='Alabama' >Alabama</option>
+                      <option value='Queens Land' >Queens Land</option>
+                    </SelectControl>
+                  </div>
 
                   <InputControl
                         display='Email used in institution'
@@ -94,9 +93,8 @@ const AddEducationalItem = (props) => {
                         ]}
                         sendStatus={getControlStatus}
                     />
-                </div>
 
-                <div className='flex w-full md:gap-10 flex-col md:flex-row'>
+                <div className='flex w-full md:gap-5 flex-col md:flex-row'>
                   <InputControl
                       display='Level of study'
                       id='levelOfStudy'
@@ -121,7 +119,7 @@ const AddEducationalItem = (props) => {
                   />
                 </div>
 
-                <div className='flex w-full md:gap-10 flex-col md:flex-row'>
+                <div className='flex w-full md:gap-5 flex-col md:flex-row'>
                   <InputControl
                       display='Start Date'
                       id='startDate'

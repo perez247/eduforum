@@ -14,7 +14,7 @@ const LoginForm = (props) => {
   }
 
   return (
-    <div className="bg-white shadow-lg shadow-primary/50 w-1/3 p-5 rounded-lg">
+    <div className="bg-white shadow-lg shadow-primary/50 w-full p-5 rounded-lg">
       <h1 className="text-3xl my-1">Login</h1>
       <p className="text-sm my-1">Welcome to EduForum</p>
       <div className="border-solid border-2 bg-[#FFFAFA] border-[##FFFAFA] flex w-full px-2 py-2 my-4 rounded-md items-center">
