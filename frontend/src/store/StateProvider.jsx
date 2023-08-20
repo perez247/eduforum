@@ -15,6 +15,7 @@ const AppStore = configureStore({
     middleware: (getDefaultMiddleware) => {
         return getDefaultMiddleware()
                   .concat(groupApi.middleware)
+                  .concat(universityApi.middleware)
                   .concat(userApi.middleware);
     }
 });
