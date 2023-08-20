@@ -12,12 +12,16 @@ import {
   } from "@heroicons/react/24/solid";
 import EducationalItem from './EducationalItem';
 import AddEducationalItem from '../Modals/AddEducationalItem';
+import { useGetUserAffiliationsQuery } from '../../store/apis/userApi';
 
 const EducationalInstitution = (props) => {
     const [openAcc1, setOpenAcc1] = React.useState(props.state);
     const [openModal, setOpenModal] = React.useState(false);
 
     const [items, setItems] = React.useState([]);
+
+    const {data, error, isFetching} = useGetUserAffiliationsQuery({ userId: '' });
+    console.log(data);
    
     const handleOpenAcc1 = () => setOpenAcc1((cur) => !cur);
 
@@ -46,7 +50,7 @@ const EducationalInstitution = (props) => {
         <AddEducationalItem open={openModal} toggleModal={toggleAddEdu} add={addEdu} />
       
         {
-          items.map((x, index) => <EducationalItem key={index} item={x} /> )
+          data && data.map((x, index) => <EducationalItem key={index} item={x} /> )
         }
 
         {

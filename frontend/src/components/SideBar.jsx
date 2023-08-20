@@ -24,7 +24,7 @@ const SideBar = () => {
         <NavLink to={`/private/students`} className={({ isActive }) => (isActive ? ' bg-purple-50' : '')} >
           <SideBarItem 
             icon={<UsersIcon className="h-5 w-5" />}
-            name='Students'
+            name='Users'
 
             // chip={<Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />}
           />

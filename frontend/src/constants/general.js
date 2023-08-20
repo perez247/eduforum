@@ -2,11 +2,14 @@
 export const ENV = {
 
     // Production
-    baseUrl: '/',
+    // baseUrl: '/',
+    // isProduction: true,
 
     // Test
     // baseUrl: '/',
+    // isProduction: true,
 
     // Local
-    // baseUrl: '/',
+    baseUrl: '/',
+    isProduction: false,
 }
