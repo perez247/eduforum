@@ -9,12 +9,12 @@ const EducationalItem = (props) => {
   const startDate = new Date(prop.startDate);
   const endDate = new Date(prop.endDate);
   return (
-    <div className='border-l-4 border-primary pl-4'>
-      <span className='text-lg font-bold'>{prop.educationInstitution}</span> <span> {startDate.toLocaleDateString('en-US')} to {endDate.toLocaleDateString('en-US')}</span>
+    <div className='border-l-4 border-primary pl-4 mb-8'>
+      <span className='text-lg font-bold'>{prop.institution.name}</span> <span> {startDate.toLocaleDateString('en-US')} to {endDate.toLocaleDateString('en-US')}</span>
       <div>{prop.courseOfStudy} ({prop.levelOfStudy})</div>
       <div className='flex gap-5 my-3'>
-        {prop.institutionEmail} 
-        <input type="text" placeholder='token' className=' h-6' />
+        {prop.email} 
+        {prop.verificationStatus==='not_started' && <input type="text" placeholder='token' className=' h-6' />}
         {/* Rejected */}
         {/* <Chip color="red" size='sm' value="Declined" />   */}
 

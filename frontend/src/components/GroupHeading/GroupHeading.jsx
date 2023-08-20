@@ -24,10 +24,10 @@ const GroupHeading = (props) => {
 
   return (
     <div className="bg-white w-full fixed border-b border-[#535860] z-10">
-      <div className="px-6">
-        <div className="flex items-center h-28 ps-14">
-          <div className="felx-none w-14 h-14 me-3">{props.headingIcon}</div>
-          <div className="felx-initial w-2/3 text-tertiary">
+      <div className="">
+        <div className="flex items-center h-28">
+          <div className="flex-none w-14 h-14 me-3">{props.headingIcon}</div>
+          <div className="flex-initial w-2/3 text-tertiary">
             <p className="text-xl font-bold">{props.heading}</p>
             <p className="text-xs">{props.subHeading}</p>
             <div className="flex gap-2 mt-2 items-center">
@@ -44,7 +44,7 @@ const GroupHeading = (props) => {
               )}
             </div>
           </div>
-          <div className="felx-initial w-14">
+          <div className="flex-initial w-14">
             {/* <PlusIcon className="h-7 w-7 bg-red-500 text-white font-extrabold"/> */}
           </div>
         </div>
