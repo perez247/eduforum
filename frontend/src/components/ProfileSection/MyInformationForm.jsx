@@ -12,8 +12,19 @@ import {
 import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
 import InputControl from '../Forms/InputControl';
 import ConfirmAction from '../Modals/ConfirmAction';
+import { useNavigate } from 'react-router-dom';
+import { authUtility } from '../../Helpers/AuthUtility';
 
 const MyInformationForm = () => {
+
+    const navigate = useNavigate()
+
+    const user = authUtility.getCurrentUser();
+  
+    if (!user) {
+      authUtility.logOut();
+      navigate('private');
+    }
 
     const [isLoading, setIsLoading] = React.useState(false);
     const [isDisabled, setIsDisabled] = React.useState(true);
@@ -59,14 +70,16 @@ const MyInformationForm = () => {
 
         <div className='flex flex-col w-full md:w-[250px] justify-center items-center relative'>
 
-        <Menu>
-            <MenuHandler>
-                <EllipsisVerticalIcon className='cursor-pointer w-5 h-5 text-white bg-tertiary absolute right-0 top-0' />
-            </MenuHandler>
-            <MenuList>
-                <MenuItem onClick={toggleModal.bind(null, true)} >Revoke affiliation</MenuItem>
-            </MenuList>
-        </Menu>
+        {
+            user.type === 'institution' && <Menu>
+                <MenuHandler>
+                    <EllipsisVerticalIcon className='cursor-pointer w-5 h-5 text-white bg-tertiary absolute right-0 top-0' />
+                </MenuHandler>
+                <MenuList>
+                    <MenuItem onClick={toggleModal.bind(null, true)} >Revoke affiliation</MenuItem>
+                </MenuList>
+            </Menu>
+        }
 
             <div>
                 <Avatar 

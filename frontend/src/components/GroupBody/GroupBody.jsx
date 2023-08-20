@@ -11,8 +11,8 @@ const GroupBody = () => {
     return position;
   }
   return (
-    <div className="bg-white w-full pb-14 fixed h-screen ps-14 pe-50">
-      <div className="h-4/6 overflow-auto">
+    <div className="bg-white w-full pb-14 fixed h-[95vh] pe-50">
+      <div className="h-4/6 overflow-auto ps-14">
         {messages.map((message) => {
           return (
             <ChatBubble
@@ -24,16 +24,16 @@ const GroupBody = () => {
           );
         })}
       </div>
-      <div className="flex items-center h-1/6 w-full pe-28">
-        <div className="border-solid border-2 bg-[#21262E] border-[#535860] flex w-9/12 px-3 py-2 rounded-md items-center">
-          <PhotoIcon className="felx-none h-6 w-6 text-white mx-2" />
-          <GifIcon className="felx-initial h-6 w-6 text-white mx-2" />
+      <div className="flex items-center h-1/6 w-full pe-28 border-t-2  border-tertiary">
+        <div className="border-solid border-2 border-tertiary flex w-9/12 px-3 py-2 rounded-md items-center">
+          <PhotoIcon className="felx-none h-6 w-6 mx-2" />
+          <GifIcon className="felx-initial h-6 w-6 mx-2" />
           <input
             placeholder="Message Curriculum Hub"
             name=""
-            className="felx-initial mx-1 w-full bg-[#21262E] text-white border-0"
+            className="felx-initial mx-1 w-full border-0"
           />
-          <FaceSmileIcon className="felx-initial h-6 w-6 text-white ms-4 mx-1" />
+          <FaceSmileIcon className="felx-initial h-6 w-6 ms-4 mx-1" />
         </div>
       </div>
     </div>

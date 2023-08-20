@@ -7,6 +7,8 @@ import UserList from "../../components/UserList/UserList";
 import PageInProgress from "../../components/PageInProgress/PageInProgress";
 import { AcademicCapIcon } from "@heroicons/react/24/solid";
 import { Users } from "../../constants/users.js";
+import GroupOverview from "../../components/GroupOverview/GroupOverview";
+import GroupUsers from "../../components/GroupUsers/GroupUsers";
 
 const Group = () => {
   const [ListItems, setListItems] = useState(Users);
@@ -36,21 +38,16 @@ const Group = () => {
         {
           {
             Chat: <GroupBody />,
-            Media: <GroupMedia />,
-            Events: <PageInProgress />,
+            Media: <PageInProgress message='This will contains all images, videos and audio relating to this group' />,
+            Events: <PageInProgress message='This will contains all previous and upcoming events' />,
+            Overview: <GroupOverview />,
             Users: (
-              <div className="h-[85vh] w-full">
-                <UserList list={ListItems} hasCheckBox={false} />
-                <div className="bottom-0 overflow-auto items-center w-full flex h-14">
-                  <Pagination
-                    Datalength={ListItems.length}
-                    changedIndex={paginatedUsers}
-                    itemsPerPage={itemPerPage}
-                  />
-                </div>
+              <div className="h-[70vh] overflow-y-auto w-full">
+                <GroupUsers />
               </div>
             ),
-            Challenges: <PageInProgress />,
+            Challenges: <PageInProgress message='This will contain online or offline activities that will engage group members and possibly give out rewards.' />,
+            Settings: <PageInProgress  message='This will contain settings to make adjustments to the group in terms of updating the details of the group' />,
           }[activeTab]
         }
       </div>

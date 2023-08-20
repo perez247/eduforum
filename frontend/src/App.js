@@ -11,6 +11,8 @@ import Users from './pages/private/users/users';
 import Auth from './pages/public/auth/Auth';
 import Profile from './pages/private/profile/Profile';
 import MyGroups from './pages/private/my-groups/MyGroups';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const location = useLocation();
@@ -37,6 +39,8 @@ function App() {
 
         <Route path='*' element={<Navigate replace to="/public/auth" />} />
       </Routes>
+      
+      <ToastContainer />
     </section>
   );
 }

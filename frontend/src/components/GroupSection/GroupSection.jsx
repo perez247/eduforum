@@ -1,5 +1,5 @@
 import React from 'react'
-import GroupCard from '../GroupCard/GroupCard'
+import GroupList from '../GroupList/GroupList'
 
 const GroupSection = (props) => {
   return (
@@ -7,11 +7,8 @@ const GroupSection = (props) => {
       <div className='w-full border-b-2 border-tertiary'>
         <span className='text-4xl'>{props.sectionName}</span>
       </div>
-      <div className='flex flex-wrap gap-5 py-8'>
-        <GroupCard />
-        <GroupCard />
-        <GroupCard />
-      </div>
+
+      <GroupList />
     </div>
   )
 }

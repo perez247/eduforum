@@ -9,25 +9,32 @@ import {
   } from "@material-tailwind/react";
 import { NavLink } from 'react-router-dom';
 
-const GroupCard = () => {
+const GroupCard = (props) => {
   return (
-    <Card className="mt-6 w-96 shadow-none border-2 border-tertiary">
+    <Card className="mt-6 w-80 shadow-none border-2 border-tertiary">
       <CardHeader color="blue-gray" className="relative h-40">
         <img
-          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-          alt="card-image"
+          // src={props.group.image}
+          src="https://images.unsplash.com/photo-1585564907580-02af7fa91cef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1568&q=80"
+          alt={props.group.name}
         />
       </CardHeader>
       <CardBody>
-        <span className='text-lg font-bold block'>UI/UX Review Check</span>
-        <span className='text-sm'>
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to &quot;Naviglio&quot;
+        <span className='text-lg font-bold'>{props.group.name}</span>
+        <span className='text-sm block'>
+        {props.group.shortDescription}
         </span>
+        {
+          props.group.affiliates.map((x, index) => 
+            <span key={index} className="text-xs bg-black rounded-md p-[3px] me-2 inline-block text-white">
+              {x}
+            </span>
+          )
+        }
       </CardBody>
       <CardFooter className="pt-0">
         <NavLink to={`/private/group/1`}>
-          <Button className='bg-primary'>View</Button>
+          <Button className='bg-primary w-full'>View</Button>
         </NavLink>
       </CardFooter>
     </Card>

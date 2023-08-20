@@ -4,6 +4,7 @@ import {
     PlusIcon
   } from "@heroicons/react/24/solid";
 import AddGroupModal from '../../../components/Modals/AddGroupModal';
+import GroupList from '../../../components/GroupList/GroupList';
 
 const MyGroups = (props) => {
 
@@ -24,6 +25,7 @@ const MyGroups = (props) => {
 
             <FunnelIcon className="h-8 w-8 cursor-pointer text-tertiary" />
         </div>
+        <GroupList />
     </>
   )
 }
