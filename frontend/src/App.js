@@ -21,7 +21,7 @@ function App() {
 
         <Route path="private" element={<PrivateFull />}>
           <Route path="explore" element={<Explore />} />
-          <Route path="group" element={<Group />} />
+          <Route path="group/:id" element={<Group />} />
           <Route path="groups" element={<AllGroup />} />
           <Route path="students" element={<Users />} />
           <Route path="profile/:id" element={<Profile/>} />

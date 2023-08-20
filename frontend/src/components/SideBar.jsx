@@ -38,19 +38,11 @@ const SideBar = () => {
           />
         </NavLink>
 
-        {/* <SideBarItem icon={<PowerIcon className="h-5 w-5" />} name='Log Out' /> */}
-
-        <hr className="my-2 border-blue-gray-50" />
-        <span className='text-sm font-bold ms-3 inline-block text-primary w-full'>Your recent groups</span>
-        <SideBarItem icon={<ChevronRightIcon strokeWidth={3} className="h-3 w-5 -mr-3" />} name='Career Progression' />
-        <SideBarItem icon={<ChevronRightIcon strokeWidth={3} className="h-3 w-5 -mr-3" />} name='Finance' />
-        <SideBarItem icon={<ChevronRightIcon strokeWidth={3} className="h-3 w-5 -mr-3" />} name='Mental' />
+        {/* <hr className="my-2 border-blue-gray-50" /> */}
         <NavLink to={`/private/groups`} className={({ isActive }) => (isActive ? ' bg-purple-50' : '')} >
-          <SideBarItem icon={<ChevronRightIcon strokeWidth={3} className="h-3 w-5 -mr-3" />} name='View All' />
+          <SideBarItem icon={<UserGroupIcon strokeWidth={3} className="h-5 w-5" />} name='My Groups' />
         </NavLink>
         <SearchApp className={`lg:hidden`} />
-
-        <hr className="my-2 border-blue-gray-50" />
 
       </List>
     </Card>

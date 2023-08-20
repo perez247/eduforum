@@ -5,7 +5,7 @@ const InputControl = props => {
     
     const maxLength = props.maxLength ? props.maxLength : 100;
 
-    const { value, hasError, valueChangeHandler, valueTouchedHandler } = useInput(props.validation, props.sendStatus, props.id);
+    const { value, error, valueChangeHandler, valueTouchedHandler } = useInput(props.validation, props.sendStatus, props.id);
 
     const inputChangedHander = (event) => {
         valueChangeHandler(event.target.value);
@@ -14,6 +14,8 @@ const InputControl = props => {
     const inputTouchedHandler = () => {
         valueTouchedHandler();
     }
+
+    const type = props.type ? props.type : 'text';
 
     return (
         <>
@@ -26,10 +28,11 @@ const InputControl = props => {
                     onBlur={inputTouchedHandler}
                     id={props.id}
                     name={props.id}
-                    error={hasError}
+                    error={error ? true : false}
                     maxLength={maxLength}
+                    type={type}
                     />
-                {<small className={`text-red-400 absolute transition-all duration-100 ${hasError ? 'visible top-11' : 'invisible top-6'} `}>{props.errorMessage}</small>}
+                {<small className={`text-red-400 absolute transition-all duration-100 ${error ? 'visible top-11' : 'invisible top-6'} `}>{error}</small>}
             </div>
         </>
     )
