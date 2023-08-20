@@ -21,7 +21,6 @@ const EducationalInstitution = (props) => {
     const [items, setItems] = React.useState([]);
 
     const {data, error, isFetching} = useGetUserAffiliationsQuery({ userId: '' });
-    console.log(data);
    
     const handleOpenAcc1 = () => setOpenAcc1((cur) => !cur);
 
@@ -49,16 +48,18 @@ const EducationalInstitution = (props) => {
         <PlusIcon onClick={toggleAddEdu.bind(null, true)} className="h-7 w-7 bg-primary text-white font-extrabold float-right cursor-pointer"/>
         <AddEducationalItem open={openModal} toggleModal={toggleAddEdu} add={addEdu} />
       
-        {
-          data && data.map((x, index) => <EducationalItem key={index} item={x} /> )
-        }
+        <div className='pt-6'>
+          {
+            data && data.map((x, index) => <EducationalItem key={index} item={x} /> )
+          }
 
-        {
-          items.length <= 0 && 
-          <div>
-            You are currently not affiliated to any Educational Institution
-          </div>
-        }
+          {
+            (data && data.length <= 0) && 
+            <div>
+              You are currently not affiliated to any Educational Institution
+            </div>
+          }
+        </div>
 
     </AccordionBody>
   </Accordion>

@@ -64,7 +64,7 @@ const AddEducationalItem = (props) => {
                   <div className='mb-8'>
                     <SelectControl
                       display='Educational Institution'
-                      id='educationInstitution'
+                      id='institution.name'
                       validation={[
                         {
                           validate: (name) => name && name.trim().length > 0,
@@ -73,14 +73,15 @@ const AddEducationalItem = (props) => {
                       ]}
                       sendStatus={getControlStatus}
                     >
-                      <option value='Alabama' >Alabama</option>
+                      <option value=''>---</option>
+                      <option value='Alabama'>Alabama</option>
                       <option value='Queens Land' >Queens Land</option>
                     </SelectControl>
                   </div>
 
                   <InputControl
                         display='Email used in institution'
-                        id='institutionEmail'
+                        id='email'
                         validation={[
                           {
                             validate: (name) => name && name.trim().length > 0,

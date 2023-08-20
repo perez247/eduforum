@@ -56,14 +56,14 @@ const Users = () => {
           )}
         </div>
       </div>
-      <UserList list={ListItems} checkBoxChecked={selectUser} hasCheckBox={true} />
-      <div className="absolute bottom-0 w-full  overflow-auto items-center">
+      <UserList list={ListItems} checkBoxChecked={selectUser} hasCheckBox={false} />
+      {/* <div className="absolute bottom-0 w-full  overflow-auto items-center">
         <Pagination
           Datalength={ListItems.length}
           changedIndex={paginatedUsers}
           itemsPerPage={itemPerPage}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

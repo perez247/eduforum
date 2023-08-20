@@ -1,80 +1,72 @@
 export const userAffliationMock = [
   {
-    "id": "ea08c8c3-1de5-44de-8630-ba0813522432",
+    "id": "8d546c08-b15d-4f5e-8d1f-37d15fcead43",
     "institution": {
-      "id": "a04cdafc-a7bc-40c4-8003-ecf6b3614482",
+      "id": "8a6cf1c6-e1b1-4723-8c9d-6faa112a26b9",
+      "name": "Amridge University"
+    },
+    "courseOfStudy": "Mathematics",
+    "levelOfStudy": "BSc",
+    "company": "BLURRYBUS",
+    "email": "inapayne@blurrybus.com",
+    "startDate": "2023-05-18",
+    "endDate": "2017-06-06",
+    "verificationStatus": "success"
+  },
+  {
+    "id": "1a5820de-c9eb-4469-be24-25be481ba0cb",
+    "institution": {
+      "id": "b43bbba1-4f4a-4252-bbb9-9def1229e2a9",
+      "name": "Amridge University"
+    },
+    "courseOfStudy": "Computer Science",
+    "levelOfStudy": "Masters",
+    "company": "ZEDALIS",
+    "email": "inapayne@zedalis.com",
+    "startDate": "2020-03-28",
+    "endDate": "2022-03-15",
+    "verificationStatus": "not_started"
+  },
+  {
+    "id": "b70ef5cf-8a01-42e8-985d-92679ec1c350",
+    "institution": {
+      "id": "172175a0-4e06-4a54-ac6c-089133ac1472",
       "name": "Alabama A & M University"
     },
     "courseOfStudy": "Computer Science",
     "levelOfStudy": "BSc",
-    "email": "queenharris@geekko.com",
-    "startDate": "2021-01-11",
-    "endDate": "2018-06-23",
-    "verificationStatus": "not_started"
+    "company": "COMBOGENE",
+    "email": "inapayne@combogene.com",
+    "startDate": "2015-10-02",
+    "endDate": "2017-03-30",
+    "verificationStatus": "failed"
   },
   {
-    "id": "fc8a654c-ad27-41ed-8955-ba05694c81c0",
+    "id": "6722a3ea-e82b-4669-b499-597f5cb7da9e",
     "institution": {
-      "id": "c5e28309-117e-4fd1-ad5c-4b8045aef2bd",
-      "name": "University of Alabama System Office"
-    },
-    "courseOfStudy": "Mathematics",
-    "levelOfStudy": "Phd",
-    "email": "queenharris@geekko.com",
-    "startDate": "2016-12-25",
-    "endDate": "2015-01-15",
-    "verificationStatus": "success"
-  },
-  {
-    "id": "2fbc2b36-1501-4031-91fb-8617a925feed",
-    "institution": {
-      "id": "894e5dc3-0d69-40bc-a174-336c9226a5cd",
-      "name": "Alabama A & M University"
+      "id": "ea37eadc-4c48-4ad7-89c4-a7321beb70a0",
+      "name": "Amridge University"
     },
     "courseOfStudy": "Medicine",
     "levelOfStudy": "Phd",
-    "email": "queenharris@geekko.com",
-    "startDate": "2017-04-28",
-    "endDate": "2022-07-18",
-    "verificationStatus": "not_started"
+    "company": "ENQUILITY",
+    "email": "inapayne@enquility.com",
+    "startDate": "2015-11-21",
+    "endDate": "2020-01-06",
+    "verificationStatus": "pending"
   },
   {
-    "id": "5ca7dd49-a731-4e2d-ab04-76413df49d3e",
+    "id": "60797c7b-c823-4c2b-be53-d39ce9fb5b2a",
     "institution": {
-      "id": "2b8ad5c3-7486-4265-a0a6-bf7acbb3a04d",
-      "name": "Alabama A & M University"
-    },
-    "courseOfStudy": "Mathematics",
-    "levelOfStudy": "BSc",
-    "email": "queenharris@geekko.com",
-    "startDate": "2021-02-17",
-    "endDate": "2015-04-05",
-    "verificationStatus": "not_started"
-  },
-  {
-    "id": "8d3ea994-78a2-41cb-b684-523e273cc449",
-    "institution": {
-      "id": "201fddaa-1da0-4098-8a03-c70aabda59f3",
+      "id": "d78b93e4-f775-4b9d-b438-744bc1816da4",
       "name": "Central Alabama Community College"
     },
     "courseOfStudy": "Data Science",
-    "levelOfStudy": "Phd",
-    "email": "queenharris@geekko.com",
-    "startDate": "2014-05-12",
-    "endDate": "2021-10-11",
-    "verificationStatus": "failed"
-  },
-  {
-    "id": "48e9d211-f8f2-470d-8691-c759ea8d1cbf",
-    "institution": {
-      "id": "f1cc84ab-f223-4e6b-8e38-d1fb9e5b5fce",
-      "name": "University of Alabama System Office"
-    },
-    "courseOfStudy": "Data Science",
-    "levelOfStudy": "Phd",
-    "email": "queenharris@geekko.com",
-    "startDate": "2023-05-09",
-    "endDate": "2016-12-12",
-    "verificationStatus": "failed"
+    "levelOfStudy": "Masters",
+    "company": "KINDALOO",
+    "email": "inapayne@kindaloo.com",
+    "startDate": "2015-04-25",
+    "endDate": "2016-02-27",
+    "verificationStatus": "success"
   }
 ]
