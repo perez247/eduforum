@@ -11,8 +11,8 @@ const GroupBody = () => {
     return position;
   }
   return (
-    <div className="bg-white w-full pt-40 pb-14 fixed h-screen ps-14 pe-50">
-      <div className="h-5/6 overflow-auto">
+    <div className="bg-white w-full pb-14 fixed h-screen ps-14 pe-50">
+      <div className="h-4/6 overflow-auto">
         {messages.map((message) => {
           return (
             <ChatBubble
@@ -31,7 +31,7 @@ const GroupBody = () => {
           <input
             placeholder="Message Curriculum Hub"
             name=""
-            className="felx-initial mx-1 w-full bg-[#21262E] text-white"
+            className="felx-initial mx-1 w-full bg-[#21262E] text-white border-0"
           />
           <FaceSmileIcon className="felx-initial h-6 w-6 text-white ms-4 mx-1" />
         </div>
