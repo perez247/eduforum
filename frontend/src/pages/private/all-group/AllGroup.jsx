@@ -4,7 +4,7 @@ import GroupSection from '../../../components/GroupSection/GroupSection'
 const AllGroup = () => {
   return (
     <>
-      <GroupSection sectionName="My Groups" />
+      <GroupSection sectionName="My Groups" className="py-8" />
     </>
   )
 }
