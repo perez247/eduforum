@@ -21,6 +21,7 @@ function App() {
         <Route index element={<Navigate replace to="/public/auth" />} />
 
         <Route path="private" element={<PrivateFull />}>
+          <Route index element={<Explore />} />
           <Route path="explore" element={<Explore />} />
           <Route path="group/:id" element={<Group />} />
           <Route path="groups" element={<AllGroup />} />
