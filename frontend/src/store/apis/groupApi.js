@@ -4,7 +4,7 @@ import { ENV } from '../../constants/general';
 export const groupApi = createApi({
     reducerPath: 'groupApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: ENV.baseUrl,
+        baseUrl: ENV.mockUrl,
         prepareHeaders: (headers) => {
             return headers;
         }
