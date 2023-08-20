@@ -10,6 +10,7 @@ import AllGroup from './pages/private/all-group/AllGroup';
 import Users from './pages/private/users/users';
 import Auth from './pages/public/auth/Auth';
 import Profile from './pages/private/profile/Profile';
+import MyGroups from './pages/private/my-groups/MyGroups';
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function App() {
           <Route path="explore" element={<Explore />} />
           <Route path="group/:id" element={<Group />} />
           <Route path="groups" element={<AllGroup />} />
+          <Route path="my-groups" element={<MyGroups />} />
           <Route path="students" element={<Users />} />
           <Route path="profile/:id" element={<Profile/>} />
           

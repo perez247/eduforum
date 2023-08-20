@@ -17,6 +17,9 @@ module.exports = withMT({
         },
         tertiary: {
           DEFAULT: '#2F190E'
+        },
+        formArea: {
+          DEFAULT: '#f2efef'
         }
       },
     },

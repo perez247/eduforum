@@ -39,7 +39,7 @@ const SideBar = () => {
         </NavLink>
 
         {/* <hr className="my-2 border-blue-gray-50" /> */}
-        <NavLink to={`/private/groups`} className={({ isActive }) => (isActive ? ' bg-purple-50' : '')} >
+        <NavLink to={`/private/my-groups`} className={({ isActive }) => (isActive ? ' bg-purple-50' : '')} >
           <SideBarItem icon={<UserGroupIcon strokeWidth={3} className="h-5 w-5" />} name='My Groups' />
         </NavLink>
         <SearchApp className={`lg:hidden`} />

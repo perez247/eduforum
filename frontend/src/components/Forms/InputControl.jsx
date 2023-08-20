@@ -19,21 +19,24 @@ const InputControl = props => {
 
     return (
         <>
-            <div className="relative mb-10 w-full">
-                <Input 
-                    disabled={props.disabled}
-                    label={props.display} 
-                    value={value} 
-                    onChange={inputChangedHander} 
-                    onBlur={inputTouchedHandler}
-                    id={props.id}
-                    name={props.id}
-                    error={error ? true : false}
-                    maxLength={maxLength}
-                    type={type}
-                    />
-                {<small className={`text-red-400 absolute transition-all duration-100 ${error ? 'visible top-11' : 'invisible top-6'} `}>{error}</small>}
-            </div>
+        <div className="border-solid border-2 bg-formArea flex w-full px-0 pt-0 pb-4 my-4 items-center relative">
+            {!props.hideDisplay && <small className='absolute -top-5 left-2 font-bold text-tertiary'>{props.display}</small>}
+            {props.prefix}
+                <input
+                disabled={props.disabled}
+                type={type}
+                placeholder={props.display}
+                onChange={inputChangedHander} 
+                onBlur={inputTouchedHandler}
+                id={props.id}
+                name={props.id}
+                maxLength={maxLength}
+                value={value}
+                className={`flex-initial mx-1 w-full bg-white text-black ${error ? 'border-red-500' : ''} ${props.disabled ? 'bg-formArea' : ''} `}
+                />
+            {props.postfix}
+            {<small className={`text-red-400 left-1 absolute transition-all duration-100 ${error ? 'visible top-11' : 'invisible top-6'} `}>{error}</small>}
+        </div>
         </>
     )
 }
